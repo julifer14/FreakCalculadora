@@ -38,7 +38,8 @@ public class Calculadora {
 				System.out.println("Indica quina operació vols fer");
 				opcioInterna = lector.nextInt();
 
-				System.out.println("Insereix els números amb què vols operar");
+				System.out
+						.println("Insereix els números amb què vols operar");
 				num1 = lector.nextFloat();
 				num2 = lector.nextFloat();
 
@@ -79,8 +80,8 @@ public class Calculadora {
 				break;
 			}
 			if (opcio == 2) {
-				System.out
-						.println("El resultat de la operaci� �s " + numBinari);
+				System.out.println("El resultat de la operaci� �s "
+						+ numBinari);
 			} else if (opcio == 3) {
 				System.out.println("Fins aviat!");
 			}
