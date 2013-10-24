@@ -5,17 +5,20 @@ import java.util.Scanner;
 public class Calculadora {
 	/*
 	 * Calculadora xaxi guai que no serveix per a res. Plena de bugs!
+	 * 
 	 */
 	Scanner lector = new Scanner(System.in);
 
 	public static void main(String[] args) {
 		Scanner lector = new Scanner(System.in);
 		Operacions operar = new Operacions();
-		Calculadora c = new Calculadora();
-		float num1 = c.demanarNumero();
-		float num2 = c.demanarNumero();
+		float num1 = 0;
+		float num2 = 0;
 		int opcio = 0;
+		float res = 0;
 		boolean sortir = false;
+		String numBinari = "";
+		float num = 0;
 		while (!sortir) {
 
 			System.out.println("Indica quina operació vols realitzar");
@@ -23,11 +26,19 @@ public class Calculadora {
 			System.out.println("2-Restar");
 			System.out.println("3-Dividir");
 			System.out.println("4-Multiplicar");
-			System.out.println("5-Convertir a binari");
-			System.out.println("6-Eliminar");
+			System.out.println("5-Eliminar");
+			System.out.println("6-Convertir a binari");
 			System.out.println("7- Sortir");
 			opcio = lector.nextInt();
-			float res;
+
+			if (opcio >= 1 && opcio <= 5) {
+				System.out.println("Indica amb quins números vols operar");
+				num1 = operar.demanarNumero();
+				num2 = operar.demanarNumero();
+			} else if (opcio == 6) {
+				System.out.println("Indica quin número vols passar a binari");
+				num = operar.demanarNumero();
+			}
 			switch (opcio) {
 			case 1:
 				res = operar.suma(num1, num2);
@@ -42,34 +53,26 @@ public class Calculadora {
 				res = operar.multiplicacio(num1, num2);
 				break;
 			case 5:
-				System.out.println("Indica quin número vols passar a binari");
-				float num = c.demanarNumero();
-				String numBinari = operar.retornaBinari(num);
+				operar.esborrarNumeros(num1, num2);
 				break;
 			case 6:
-				c.esborrarNumeros(num1, num2);
+				numBinari = operar.retornaBinari(num);
 				break;
 			case 7:
 				sortir = true;
+				break;
 			default:
+				System.out.println("Operació no vàlida BURRO!");
 				break;
 			}
+			
+			if (opcio < 6) {
+				System.out.println("El resultat de la operació és " + res);
+			} else if(opcio == 6) {
+				System.out.println("El resultat de la operació és " + numBinari);
+			}else{
+				System.out.println("Fins aviat!");
+			}
 		}
-	}
-
-	public float demanarNumero() {
-		// Scanner lector = new Scanner(System.in);
-		System.out.println("Escriu un número");
-		float numero = lector.nextFloat();
-		return numero;
-	}
-
-	public void esborrarNumeros(float n1, float n2) {
-		// Scanner lector = new Scanner(System.in);
-		Esborrar sup = new Esborrar(n1, n2);
-		System.out.println("Indica quin número vols esborrar");
-		sup.mostrarNumeros();
-		float num = lector.nextFloat();
-		sup.esborrarNumero(num);
 	}
 }
