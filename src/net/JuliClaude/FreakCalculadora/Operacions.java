@@ -2,28 +2,28 @@ package net.JuliClaude.FreakCalculadora;
 
 public class Operacions {
 	
-	int resultat; 
-	public float suma(int num1, int num2){
+	float resultat; 
+	public float suma(float num1, float num2){
 		resultat = num1 + num2;
 		return resultat;
 	}
-	public float resta(int num1, int num2){
+	public float resta(float num1, float num2){
 		resultat = num1 - num2;
 		return resultat;
 	}
-	public float multiplicacio(int num1, int num2){
+	public float multiplicacio(float num1, float num2){
 		resultat=num1*num2;
 		return resultat;
 	}
-	public float divisio(int num1, int num2){
+	public float divisio(float num1, float num2){
 		resultat=num1/num2;
 		return resultat;
 	}
 	
-	public String retornaBinari(int num){
+	public String retornaBinari(float num){
 		String resultatBinari;
-		num = (int) num;
-		resultatBinari=Integer.toBinaryString(num);		
+		int num2 = (int) num;
+		resultatBinari=Integer.toBinaryString(num2);		
 		return resultatBinari;
 	}
 }
