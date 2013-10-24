@@ -41,7 +41,7 @@ public class Calculadora {
 				System.out.println("Insereix els números amb què vols operar");
 				num1 = lector.nextFloat();
 				num2 = lector.nextFloat();
-				
+
 				switch (opcioInterna) {
 				case 1:
 					res = operar.suma(num1, num2);
@@ -58,14 +58,14 @@ public class Calculadora {
 				case 4:
 					res = operar.multiplicacio(num1, num2);
 					break;
-				
+
 				case 5:
 					operar.esborrarNumeros(num1, num2);
 					break;
 
 				}
-				if(opcioInterna != 5){
-				System.out.println("El resultat de la operació es "+res);
+				if (opcioInterna != 5) {
+					System.out.println("El resultat de la operació es " + res);
 				}
 			case 2:
 				num = operar.demanarNumero();
@@ -81,7 +81,7 @@ public class Calculadora {
 			if (opcio == 2) {
 				System.out
 						.println("El resultat de la operaci� �s " + numBinari);
-			} else if(opcio==3){
+			} else if (opcio == 3) {
 				System.out.println("Fins aviat!");
 			}
 		}
