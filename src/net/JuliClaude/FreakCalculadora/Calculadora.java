@@ -15,20 +15,45 @@ public class Calculadora {
 		float num1 = c.demanarNumero();
 		float num2 = c.demanarNumero();
 		int opcio = 0;
-		System.out.println("Indica quina operació vols realitzar");
-		System.out.println("1- Sumar");
-		System.out.println("2-Restar");
-		System.out.println("3-Dividir");
-		System.out.println("4-Multiplicar");
-		System.out.println("5-Convertir a binari");
-		opcio = lector.nextInt();
-		switch (opcio) {
-		case 1:
-			operar.suma(num1, num2);
-			break;
+		boolean sortir = false;
+		while (!sortir) {
 
-		default:
-			break;
+			System.out.println("Indica quina operació vols realitzar");
+			System.out.println("1- Sumar");
+			System.out.println("2-Restar");
+			System.out.println("3-Dividir");
+			System.out.println("4-Multiplicar");
+			System.out.println("5-Convertir a binari");
+			System.out.println("6-Eliminar");
+			System.out.println("7- Sortir");
+			opcio = lector.nextInt();
+			float res;
+			switch (opcio) {
+			case 1:
+				res = operar.suma(num1, num2);
+				break;
+			case 2:
+				res = operar.resta(num1, num2);
+				break;
+			case 3:
+				res = operar.divisio(num1, num2);
+				break;
+			case 4:
+				res = operar.multiplicacio(num1, num2);
+				break;
+			case 5:
+				System.out.println("Indica quin número vols passar a binari");
+				float num = c.demanarNumero();
+				String numBinari = operar.retornaBinari(num);
+				break;
+			case 6:
+				c.esborrarNumeros(num1, num2);
+				break;
+			case 7:
+				sortir = true;
+			default:
+				break;
+			}
 		}
 	}
 
