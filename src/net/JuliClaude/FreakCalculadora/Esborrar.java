@@ -11,20 +11,25 @@ public class Esborrar {
 	}
 	
 	public void mostrarNumeros(){
-		System.out.println("Els números són: ");
-		System.out.println("Número 1: " + num1);
-		System.out.println("Número 2: " + num2);
+		System.out.println("Els nï¿½meros sï¿½n: ");
+		System.out.println("Nï¿½mero 1: " + num1);
+		System.out.println("Nï¿½mero 2: " + num2);
 	}
 	
 	public void esborrarNumero(float num){
+		Operacions operar = new Operacions();
 		if(num1 == num){
 			num1 = 0;
-			System.out.println("Número esborrat correctament");
+			System.out.println("Nï¿½mero esborrat correctament");
+			System.out.println("Introdueix el numero correcte");
+			num1 = operar.demanarNumero();
 		}else if(num2 == num){
 			num2 = 0;
-			System.out.println("Número esborrat correctament");
+			System.out.println("Nï¿½mero esborrat correctament");
+			System.out.println("Introdueix el numero correcte");
+			num2 = operar.demanarNumero();
 		}else{
-			System.out.println("El número entrat no és correcte");
+			System.out.println("El nï¿½mero entrat no ï¿½s correcte");
 		}
 	}
 	
