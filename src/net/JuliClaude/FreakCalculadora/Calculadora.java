@@ -9,15 +9,15 @@ public class Calculadora {
 
 	public static void main(String[] args) {
 		Calculadora c = new Calculadora();
-		int numero1 = c.demanarNumero();
-		int numero2 = c.demanarNumero();
+		float numero1 = c.demanarNumero();
+		float numero2 = c.demanarNumero();
 		System.out.println(numero1 + "" + numero2);
 	}
 
-	public int demanarNumero() {
+	public float demanarNumero() {
 		Scanner lector = new Scanner(System.in);
 		System.out.println("Escriu un número");
-		int numero = lector.nextInt();
+		float numero = lector.nextFloat();
 		return numero;
 	}
 }
